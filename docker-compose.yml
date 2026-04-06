@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  consumer:
+    build: ./consumer_service
+    ports:
+      - "8001:8001"
+    environment:
+      - SECRET_TOKEN=mysecrettoken
+
+  producer:
+    build: ./producer_service
+    ports:
+      - "8000:8000"
+    environment:
+      - CONSUMER_URL=http://consumer:8001
+      - SECRET_TOKEN=mysecrettoken
+    depends_on:
+      - consumer
