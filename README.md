@@ -32,7 +32,7 @@ Response forwarded back to Client
 ### Run the services
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/tusharjoshi1804/producer-consumer-app
 cd producer_consumer_app
 docker-compose up --build
 ```
